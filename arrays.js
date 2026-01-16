@@ -10,7 +10,7 @@ for (let i = 0; i < numbers.length; i++) {
 let number= [6, 7, 8, 9, 10];
 let sum=0;
 for (let i=0; i < number.length; i++) {
-    sum= sum +numbers[i];
+    sum= sum +number[i];
 }
 console.log ("The sum of all elements is", sum);
 
@@ -33,7 +33,7 @@ let elements = [2, 8, 13, 22, 40];
 let evenCount = 0;
 let oddCount= 0;
 for (let i=0; i< numbers.length; i++) {
-    if (numbers[i] % 2 ===0) {
+    if (elements[i] % 2 ===0) {
         evenCount = evenCount +1;
     } else {
         oddCount = oddCount +1;
@@ -58,7 +58,7 @@ console.log("Reversed Array:", reversedArray);
 let numb = [5, 10, 20, 40, 50];
 let elementToFind = 20;
 let found = false;
-for (let i = 0; i < numbers.length; i++) {
+for (let i = 0; i < numb.length; i++) {
     if (numb[i] === elementToFind) {
         console.log("Element found at index:", i);
         found = true;
@@ -123,20 +123,27 @@ console.log("Array after rotation:", arr);
 
 //Question no:11
 //Merge two arrays into one and sort the merged array in ascending order without using the sort() method.
-let arr1 = [9, 4, 1];
-let arr2 = [5, 6, 3];
-// Merge arrays using concat
-let merged = arr1.concat(arr2);
-console.log("Merged array:", merged); // [5, 2, 9, 1, 7, 3]
-// Sort the merged array using a simple bubble sort
-for (let i = 0; i < merged.length - 1; i++) {
-    for (let j = 0; j < merged.length - i - 1; j++) {
-        // Swap if the current element is greater than the next
-        if (merged[j] > merged[j + 1]) {
-            let temp = merged[j];
-            merged[j] = merged[j + 1];
-            merged[j + 1] = temp;
+let array1 = [7, 4, 9];  // First array
+let array2 = [6, 2, 7];  // Second array
+let mergedArray = [];    // Empty array to store merged elements
+// Add elements of array1 to mergedArray
+for (let i = 0; i < array1.length; i++) {
+    mergedArray.push(array1[i]);
+}
+// Add elements of array2 to mergedArray
+for (let i = 0; i < array2.length; i++) {
+    mergedArray.push(array2[i]);
+}
+// Sort the merged array in ascending order using a simple nested loop
+for (let i = 0; i < mergedArray.length; i++) {
+    for (let j = i + 1; j < mergedArray.length; j++) {
+        // Swap elements if the current element is greater than the next
+        if (mergedArray[i] > mergedArray[j]) {
+            let temp = mergedArray[i];
+            mergedArray[i] = mergedArray[j];
+            mergedArray[j] = temp;
         }
     }
 }
-console.log("Sorted merged array:", merged); 
+console.log("Merged and sorted array:", mergedArray); 
+
